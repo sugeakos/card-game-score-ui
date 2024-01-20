@@ -1,0 +1,18 @@
+<div routerLinkActive="active" class="desktop-only" style="position: relative">
+  <div class="nav-item">
+    <div [routerLink]="item.routerLink">
+      <a dropdownToggle aria-controls="basic-link-dropdown-mobile">{{item.text}}</a>
+    </div>
+    <ul class="dropdown-menu">
+      <ng-container *ngFor="let childItem of item.children; trackBy: trackByItem">
+        <li *ngIf="!childItem.hide">
+          <div class="dropdown-item nav-item"
+               [routerLink]="[item.routerLink, childItem.routerLink]"
+               routerLinkActive="active">
+            {{childItem.text}}
+          </div>
+        </li>
+      </ng-container>
+    </ul>
+  </div>
+</div>

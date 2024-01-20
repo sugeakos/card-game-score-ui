@@ -1,0 +1,22 @@
+<div id="language-select" class="language-wrapper">
+  <div class="selected-language"
+       (click)="opened = !opened"
+       tabindex="0">
+    <div class="lang-text">
+      <label>{{'common.lang.label' }}</label>
+      <span class="current-item">{{'common.language.' + currentLang}}</span>
+    </div>
+    <div class="lang-icon">
+      <i class="ti ti-{{opened ? 'chevron-up' : 'chevron-down}}"></i>
+    </div>
+  </div>
+
+  <ng-container *ngIf="opened">
+    <div *ngFor="let lang of availableLanguages"
+         (click)="selectLang(lang)"
+         tabindex="0"
+      class="lang-select-item">
+      {{'common.language.' + lang }}
+    </div>
+  </ng-container>
+</div>

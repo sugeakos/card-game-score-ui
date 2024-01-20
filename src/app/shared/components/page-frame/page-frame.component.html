@@ -1,0 +1,16 @@
+<div class="main-dashboard">
+  <div class="main-container">
+    <div class="header-container">
+      <div class="dashboard-header">
+        <div class="header-spacer">
+          <div class="header-control">
+            <app-language-selection></app-language-selection>
+          </div>
+        </div>
+        <ng-container *ngTemplateOutlet="headerItems">
+        </ng-container>
+      </div>
+    </div>
+    <ng-container *ngTemplateOutlet="mainContent"></ng-container>
+  </div>
+</div>

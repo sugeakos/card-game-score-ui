@@ -1,0 +1,14 @@
+<nav class="navbar navbar-expand-lg">
+  <div class="container-fluid">
+    <i class="fa-solid fa-bars" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+       (click)="toggleNavbarCollapsing()"></i>
+    <div class="navbar-collapse" id="navbarSupportedContent" [class.collapse]="navbarCollapsed">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0 w-100 justify-content-center">
+        <li *ngFor="let item of items; trackBy: trackByItem">
+          <app-top-nav-bar-item *ngIf="!item.children && !item.hide" [item]="item"></app-top-nav-bar-item>
+          <app-top-nav-bar-drop-down *ngIf="item.children" [item]="item"></app-top-nav-bar-drop-down>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
