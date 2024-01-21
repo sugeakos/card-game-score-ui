@@ -1,7 +1,35 @@
+@use '@angular/material' as mat;
+@include mat.core();
+@import "style/colors";
+
+
+$card-score-primary: mat.define-palette(mat.$teal-palette, 400);
+$card-score-secondary: mat.define-palette($lavender-palette, 200);
+$card-score-warn: mat.define-palette(mat.$red-palette);
+
+$card-score-theme: mat.define-light-theme(
+    (
+      color: (
+        primary: $card-score-primary,
+        accent: $card-score-secondary,
+        warn: $card-score-warn
+      )
+    )
+);
+
+@include mat.all-component-themes($card-score-theme);
+
 .main-dashboard .main-container .main-content-area .main-outlet {
   max-width: unset;
   margin-left: 40px;
   margin-right: 40px;
+}
+
+body {
+  background: $color-dark-green;
+  font-size: 18px;
+  color: $color-text;
+  font-family: "Comic Sans MS", serif;
 }
 
 a {
@@ -38,17 +66,33 @@ a {
 .nav-item {
   cursor: pointer !important;
   text-decoration-line: none !important;
-
   padding: 16px;
+  float: left;
+  margin-left: 5px;
 
   a {
     text-decoration-line: none;
 
-    &:hover {
+    &:hover, &.dropdown-item {
       font-weight: unset;
     }
   }
 }
+
+.navbar-hamburger {
+  font-size: x-large;
+  cursor: pointer;
+}
+
+.navbar-toggle {
+  border-radius: 4px;
+}
+
+ul {
+  list-style-type: none;
+  overflow: hidden;
+}
+
 
 .nav-tabs > .nav-item {
   cursor: default !important;
@@ -65,13 +109,13 @@ a {
     .nav-menu {
       .opened {
         &.in-flyout {
-
+          color: #154c60;
         }
 
         .level-1 {
-
+          color: #154c60;
           &:hover {
-
+            background-color: aqua;
           }
         }
       }
@@ -85,15 +129,16 @@ a {
         }
 
         &.level-2 {
-
+          background-color: crimson;
         }
 
         &.level-3 {
-
+          background-color: #6b637c;
         }
 
         &:hover {
-
+          background-color: $color-dark-green;
+          color: crimson;
         }
       }
     }
@@ -306,5 +351,78 @@ a {
     position: sticky;
     left: 0;
     z-index: 1;
+  }
+}
+
+.language-wrapper {
+  min-width: 30%;
+  border-radius: 10px;
+  cursor: pointer;
+  .selected-language {
+    padding-left: 16px;
+    padding-right: 16px;
+    &:hover {
+      background-color: $color-background-hover;
+    }
+  }
+  .lang-select-item {
+    padding-left: 16px;
+    padding-right: 16px;
+    &:hover {
+      padding-left: 16px;
+      padding-right: 16px;
+      background-color: $color-background-hover;
+    }
+    &:active {
+      padding-left: 16px;
+      padding-right: 16px;
+      background-color: $color-teal-400;
+    }
+  }
+}
+
+
+.desktop-only {
+  .nav-item .dropdown-menu {
+    display: none;
+    margin-top: 0;
+  }
+  .nav-item:hover .dropdown-menu {
+    padding-top: 5px;
+    display: block;
+    background-color: $color-background-hover;
+    border-radius: 20px;
+    inset: 100% auto auto 0px;
+    transform: translateY(0px);
+    color: $color-teal-400;
+  }
+}
+
+.header-control {
+  display: flex;
+  float: right;
+}
+
+.bot-padding-20 {
+  padding-bottom: 20px;
+}
+
+mat-card-header, mat-card-content, mat-card-actions {
+  background-color: $color-teal-400;
+}
+
+.header-spacer {
+  flex: 1 1 auto;
+}
+
+mat-form-field {
+  width: 50%
+}
+
+mat-option {
+  background-color: $color-teal-400;
+
+  &:hover {
+    background-color: $color-teal-400;
   }
 }

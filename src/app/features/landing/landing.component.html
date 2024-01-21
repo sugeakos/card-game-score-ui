@@ -6,7 +6,6 @@
   <ng-template #mainContent>
     <div>
       <app-top-nav-bar [items]="navBarItems"></app-top-nav-bar>
-      <p *ngFor="let navBarItem of navBarItems;">{{navBarItem.text}} - {{navBarItem.routerLink}}</p>
       <div class="main-content-area">
         <div class="main-outlet">
           <router-outlet></router-outlet>

@@ -9,6 +9,7 @@ import {HttpClient, HttpClientModule} from "@angular/common/http";
 import {CommonTranslateHttpLoader} from "./app/core/translate/translate-http.loader";
 import {AppInitializerService} from "./app/init/app-initializer.service";
 import {registerLocaleData} from "@angular/common";
+import {MAT_FORM_FIELD_DEFAULT_OPTIONS} from "@angular/material/form-field";
 
 function init_app(firstLoadService: AppInitializerService): () => Promise<void> {
   return (): Promise<void> => firstLoadService.init();
@@ -31,6 +32,7 @@ bootstrapApplication(AppComponent, {
       HttpClientModule,
     ),
     {provide: APP_INITIALIZER, useFactory: init_app, deps: [AppInitializerService], multi: true},
-    {provide: LOCALE_ID, useValue: 'hu-HU'}
+    {provide: LOCALE_ID, useValue: 'hu-HU'},
+    {provide: MAT_FORM_FIELD_DEFAULT_OPTIONS, useValue: {appearance: 'outline'} }
   ]
 }).catch((err) => console.error(err));

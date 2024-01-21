@@ -2,6 +2,7 @@ import {Component, ElementRef, HostListener, OnInit} from '@angular/core';
 import {CustomOnDestroy} from "../../classes/custom-on-destroy";
 import {LangChangeEvent, TranslateModule, TranslateService} from "@ngx-translate/core";
 import {NgForOf, NgIf} from "@angular/common";
+import {MatButton} from "@angular/material/button";
 
 @Component({
   selector: 'app-language-selection',
@@ -9,7 +10,8 @@ import {NgForOf, NgIf} from "@angular/common";
   imports: [
     TranslateModule,
     NgIf,
-    NgForOf
+    NgForOf,
+    MatButton
   ],
   templateUrl: './language-selection.component.html',
   styleUrl: './language-selection.component.scss'

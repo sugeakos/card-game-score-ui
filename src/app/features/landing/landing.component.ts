@@ -23,10 +23,8 @@ export class LandingComponent extends CustomOnDestroy implements OnInit{
     super();
   }
 
-
   ngOnInit(): void {
     this.navBarItems = navBarItems();
   }
-
 
 }

@@ -2,13 +2,16 @@
   <div class="main-container">
     <div class="header-container">
       <div class="dashboard-header">
-        <div class="header-spacer">
+        <mat-toolbar color="primary">
+          <app-clock></app-clock>
+          <div class="header-spacer"></div>
           <div class="header-control">
             <app-language-selection></app-language-selection>
           </div>
-        </div>
-        <ng-container *ngTemplateOutlet="headerItems">
-        </ng-container>
+
+          <ng-container *ngTemplateOutlet="headerItems">
+          </ng-container>
+        </mat-toolbar>
       </div>
     </div>
     <ng-container *ngTemplateOutlet="mainContent"></ng-container>

@@ -3,13 +3,17 @@ import {NgTemplateOutlet} from "@angular/common";
 import {CustomOnDestroy} from "../../classes/custom-on-destroy";
 import {Router} from "@angular/router";
 import {LanguageSelectionComponent} from "../language-selection/language-selection.component";
+import {ClockComponent} from "../clock/clock.component";
+import {MatToolbar} from "@angular/material/toolbar";
 
 @Component({
   selector: 'app-page-frame',
   standalone: true,
   imports: [
     NgTemplateOutlet,
-    LanguageSelectionComponent
+    LanguageSelectionComponent,
+    ClockComponent,
+    MatToolbar
   ],
   templateUrl: './page-frame.component.html',
   styleUrl: './page-frame.component.scss'

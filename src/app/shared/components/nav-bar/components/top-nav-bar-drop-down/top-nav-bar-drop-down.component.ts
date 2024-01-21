@@ -3,6 +3,8 @@ import {TopNavBarItem} from "../../../../../models/top-nav-bar/top-nav-bar-item"
 import {RouterLink, RouterLinkActive} from "@angular/router";
 import {TranslateModule} from "@ngx-translate/core";
 import {NgForOf, NgIf} from "@angular/common";
+import {MatButton} from "@angular/material/button";
+import {MatDivider} from "@angular/material/divider";
 
 @Component({
   selector: 'app-top-nav-bar-drop-down',
@@ -12,7 +14,9 @@ import {NgForOf, NgIf} from "@angular/common";
     RouterLink,
     TranslateModule,
     NgForOf,
-    NgIf
+    NgIf,
+    MatButton,
+    MatDivider
   ],
   templateUrl: './top-nav-bar-drop-down.component.html',
   styleUrl: './top-nav-bar-drop-down.component.scss',

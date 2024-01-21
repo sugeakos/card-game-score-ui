@@ -28,7 +28,7 @@ export class CommonTranslateHttpLoader implements TranslateLoader {
 
   protected getFolderNames(): string [] {
     return [
-
+      'common'
     ];
   }
 }

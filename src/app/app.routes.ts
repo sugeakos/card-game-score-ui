@@ -6,5 +6,9 @@ export const appRoutes: Routes = [
     loadComponent: () => import('./features/landing/landing.component').then((x) => x.LandingComponent),
     loadChildren: () => import('./features/landing/landing.routes').then(routes => routes.landingRoutes),
     data: {}
+  },
+  {
+    path: '**',
+    redirectTo: 'home'
   }
 ];
