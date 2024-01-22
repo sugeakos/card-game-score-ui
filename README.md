@@ -1,6 +1,8 @@
 # CardGameUi
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.1.0.
+Supported node version: v20.3.0
+Supported npm version: 9.6.7
 
 ## Development server
 
