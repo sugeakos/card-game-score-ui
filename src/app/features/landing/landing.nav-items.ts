@@ -5,18 +5,14 @@ export const navBarItems = (): TopNavBarItem[] => ([
     id: 'home-nav-button',
     text: 'navMenu.home.home',
     routerLink: 'home',
-    children: [
-      {id: 'home-2', text: 'home-2', routerLink: 'home-2'},
-
-    ]
+    children: []
   },
   {
-    id: 'test-nav-button',
-    text: 'navMenu.test.test',
-    routerLink: 'test',
+    id: 'player-info-nav-button',
+    text: 'navMenu.playerInfo.playerInfo',
+    routerLink: 'player-info',
     children: [
-      {id: 'test-bbb', text: 'test-bbb', routerLink: 'test-bbb'},
-      {id: 'test-ccc', text: 'test-ccc', routerLink: 'test-ccc'},
+      {id: 'player-score', text: 'navMenu.playerInfo.playerScore', routerLink: 'player-score'},
     ]
   }
 

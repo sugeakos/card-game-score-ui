@@ -6,31 +6,38 @@ import moment from "moment";
 @Injectable()
 export class CreateGameService extends CustomOnDestroy {
   private newGame!: CardGameModel;
-  private readonly CARD_GAME_NAME: string = 'Mexico_';
+
+  private readonly DEFAULT_CARD_GAME: CardGameModel = {
+    gameId: 'DefaultGameId',
+    gameStart: moment(),
+    players: []
+  };
   constructor() {
     super();
   }
 
   createNewGame(gameModel: CardGameModel): void {
-    this.newGame = gameModel;
-    this.newGame.gameId = this.CARD_GAME_NAME + moment().toISOString();
+    this.newGame = gameModel;;
     this.saveGameIdsToLocalStorage(this.newGame.gameId);
     this.saveGameToLocalStorage(this.newGame.gameId, this.newGame);
   }
 
   getSavedCardGame(gameName: string): CardGameModel {
-    let cardGameFormLocalStorage: string = localStorage.getItem(gameName) ?? '';
+    let cardGameFormLocalStorage: string = localStorage.getItem(gameName) ?? JSON.stringify(this.DEFAULT_CARD_GAME);
     return JSON.parse(cardGameFormLocalStorage);
   }
 
   getGameIdsFormLocalStorage(): string[] {
     let gameNamesFromLocalStorage: string | null = localStorage.getItem('gameNames');
     if (gameNamesFromLocalStorage !== null) {
-      console.log('GameName: ', gameNamesFromLocalStorage.split(','));
       return  gameNamesFromLocalStorage.split(',');
     } else {
       return  [];
     }
+  }
+
+  updateGame(updatedGameModel: CardGameModel): void {
+    this.saveGameToLocalStorage(updatedGameModel.gameId, updatedGameModel);
   }
 
   private saveGameToLocalStorage(gameName: string, gameModel: CardGameModel): void {
@@ -47,5 +54,9 @@ export class CreateGameService extends CustomOnDestroy {
       gameNameToSave = gameNamesFromLocalStorage + ',' + gameName;
     }
     localStorage.setItem('gameNames', gameNameToSave);
+  }
+
+  private removeGameFormLocalStorageByName(gameName: string): void {
+    localStorage.removeItem(gameName);
   }
 }

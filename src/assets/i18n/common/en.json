@@ -1,5 +1,21 @@
 {
   "common.lang.label": "Selected language: ",
   "common.language.hu": "Hungarian",
-  "common.language.en": "English"
+  "common.language.en": "English",
+
+  "navMenu.home.home": "Home",
+  "navMenu.playerInfo.playerInfo": "Player's info",
+  "navMenu.playerInfo.playerScore": "Player's score",
+
+  "home.createNewGame": "Create new game",
+  "home.cancel": "Cancel",
+  "home.addPlayerToGame": "Add player to game",
+  "home.addPlayerToGame.placeholder": "Player 1 name, player 2 name, ...",
+  "playerInfo.playersList": "Players list",
+  "playerInfo.selectGameForPlayers": "Select game to see players",
+  "playerInfo.dealerPlayerName": "Current dealer Player's name ",
+  "playerInfo.nextDealerPlayerName": "next dealer is ",
+  "playerScore.selectGameToSetPoints": "Select game to set current round's points",
+  "playerScore.previousPlayer": "Previous player",
+  "playerScore.nextPlayer": "Next player"
 }

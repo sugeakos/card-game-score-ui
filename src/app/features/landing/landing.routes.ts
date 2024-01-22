@@ -6,7 +6,7 @@ export const landingRoutes: Routes = [
     loadChildren: () => import('../home/home.routes').then(routes => routes.homeRoutes)
   },
   {
-    path: 'test',
-    loadChildren: () => import('../test/test.routes').then(routes => routes.testRoutes)
+    path: 'player-info',
+    loadChildren: () => import('../player-info/player-info.routes').then(routes => routes.playerInfoRoutes)
   }
 ];

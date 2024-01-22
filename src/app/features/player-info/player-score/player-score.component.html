@@ -1,0 +1,43 @@
+<div class="row">
+  <mat-card>
+    <mat-card-content>
+      <form [formGroup]="form">
+        <mat-form-field color="accent">
+          <mat-select formControlName="selectedGameName"
+                      color="primary"
+                      (selectionChange)="listPlayersBySelectedGame()"
+                      placeholder="{{'playerScore.selectGameToSetPoints' | translate}}">
+            <mat-option *ngFor="let gameName of gameNames" [value]="gameName" color="primary"> {{ gameName }}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+      </form>
+    </mat-card-content>
+  </mat-card>
+</div>
+<div class="bot-padding-20"></div>
+<div class="row" *ngIf="!!selectedGame">
+  <mat-stepper linear="true">
+    <mat-step *ngFor="let player of players; let i = index">
+      <ng-template matStepLabel>{{ player.playerName }}</ng-template>
+      <form action="" [formGroup]="playersForm">
+        <mat-form-field>
+          <input matInput type="number" formControlName="{{player.playerName}}Control" placeholder="{{player.playerName}}">
+        </mat-form-field>
+        <mat-form-field>
+          <mat-select formControlName="selectedOperation"
+                      color="primary"
+                      placeholder="Select operation">
+            <mat-option value="-" color="primary"> - </mat-option>
+            <mat-option value="+" color="primary"> + </mat-option>
+          </mat-select>
+        </mat-form-field>
+      </form>
+      <div>
+        <button mat-raised-button color="primary" (click)="savePointToPlayer(player.playerName)"><mat-icon>save</mat-icon></button>
+      </div>
+      <button mat-button color="accent" matStepperPrevious>{{ 'playerScore.previousPlayer' | translate}}</button>
+      <button mat-button color="accent" matStepperNext>{{'playerScore.nextPlayer' | translate}}</button>
+    </mat-step>
+  </mat-stepper>
+</div>

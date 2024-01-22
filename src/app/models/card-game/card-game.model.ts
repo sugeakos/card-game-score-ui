@@ -2,7 +2,7 @@ import {Moment} from "moment";
 
 export interface CardGameModel {
   players: PlayerInfo[];
-  gameId?: string;
+  gameId: string;
   gameStart?: Moment;
   gameEnd?: Moment;
 }

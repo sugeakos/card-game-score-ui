@@ -1,0 +1,48 @@
+<div class="row">
+  <div class="col-md-3">
+    <mat-card>
+      <mat-card-header>
+        <mat-card-title>{{'playerInfo.playersList' | translate}}</mat-card-title>
+      </mat-card-header>
+      <mat-card-content>
+        <div class="col-md-3">
+          <form [formGroup]="form">
+            <div class="row">
+              <mat-form-field color="accent">
+                <mat-select formControlName="selectedGameName"
+                            color="primary"
+                            (selectionChange)="listPlayersBySelectedGame()"
+                            placeholder="{{'playerInfo.selectGameForPlayers' | translate}}">
+                  <mat-option *ngFor="let gameName of gameNames" [value]="gameName" color="primary"> {{ gameName }}
+                  </mat-option>
+                </mat-select>
+              </mat-form-field>
+            </div>
+          </form>
+        </div>
+      </mat-card-content>
+    </mat-card>
+  </div>
+</div>
+
+<div class="bot-padding-20"></div>
+<div class="row" *ngIf="!!selectedGame">
+  <div class="col-md-12">
+    <table class="table table-light table-bordered">
+      <caption>{{ 'playerInfo.dealerPlayerName' | translate}} <b>{{currentDealer}}</b> {{'playerInfo.nextDealerPlayerName' | translate}} <i>{{nextDealer}}</i></caption>
+      <thead>
+      <tr>
+        <th *ngFor="let player of players"> {{ player.playerName.trim() }}</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr>
+        <td *ngFor="let player of players;">
+          <p *ngFor="let round of player.rounds; let i = index" [ngClass]="i % 4 == 0 ? 'dealerPlayer' : 'notDealerPlayer'" > {{ round.score }}</p>
+        </td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+

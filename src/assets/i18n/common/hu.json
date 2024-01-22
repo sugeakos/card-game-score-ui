@@ -1,5 +1,21 @@
 {
   "common.lang.label": "Kiválasztott neyelv: ",
   "common.language.hu": "Magyar",
-  "common.language.en": "Angol"
+  "common.language.en": "Angol",
+
+  "navMenu.home.home": "Kezdőlap",
+  "navMenu.playerInfo.playerInfo": "Játékosok",
+  "navMenu.playerInfo.playerScore": "Játékosok pontjai",
+
+  "home.createNewGame": "Új parti létrehozása",
+  "home.cancel": "Mégse",
+  "home.addPlayerToGame": "Játékos(ok) hozzáadása",
+  "home.addPlayerToGame.placeholder": "1-es játékos neve, 2-es játékos neve, ...",
+  "playerInfo.playersList": "Játékosok listája",
+  "playerInfo.selectGameForPlayers": "Parti kiválasztása a játékos(ok) megtekintéséhez",
+  "playerInfo.dealerPlayerName": "Jelenlegi osztó ",
+  "playerInfo.nextDealerPlayerName": " következő osztó ",
+  "playerScore.selectGameToSetPoints": "Parti kiválasztása,a jelenlegi kör pontjainak beírásához",
+  "playerScore.previousPlayer": "Előző játékos",
+  "playerScore.nextPlayer": "Következő játékos"
 }
